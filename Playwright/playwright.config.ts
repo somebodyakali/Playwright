@@ -34,6 +34,18 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'smoke test',
+      testMatch: /.*smoke.spec.ts/,
+      retries: 0
+    },
+    { 
+      name: 'production',
+      use: {
+       baseURL:'https://demoqa.com'
+      },
+      retries: 1
+},
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
